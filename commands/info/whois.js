@@ -21,18 +21,18 @@ module.exports = {
         const created = formatDate(member.user.createdAt);
 
         const embed = new MessageEmbed()
-            .setFooter(member.displayName, member.user.displayAvatarURL)
-            .setThumbnail(member.user.displayAvatarURL)
+            .setFooter(member.displayName, member.user.displayAvatarURL())
+            .setThumbnail(member.user.displayAvatarURL())
             .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
 
-            .addField('Member information:', stripIndents`**> Display name:** ${member.displayName}
-            **> Joined at:** ${joined}
-            **> Roles:** ${roles}`, true)
+            .addField('Информация пользователя:', stripIndents`**> Имя:** ${member.displayName}
+            **> Присоединился:** ${joined}
+            **> Роли:** ${roles}`, true)
 
-            .addField('User information:', stripIndents`**> ID:** ${member.user.id}
-            **> Username**: ${member.user.username}
-            **> Tag**: ${member.user.tag}
-            **> Created at**: ${created}`, true)
+            .addField('Информация пользователя:', stripIndents`**> ID:** ${member.user.id}
+            **> Имя**: ${member.user.username}
+            **> Тег**: ${member.user.tag}
+            **> Создан**: ${created}`, true)
             
             .setTimestamp()
 
