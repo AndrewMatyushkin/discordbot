@@ -15,8 +15,9 @@ module.exports = {
                 .setDescription(args.slice(1).join(" "))
                 .setColor(roleColor === "#000000" ? "#ffffff" :  roleColor)
                 .setTimestamp()
-                .setImage(client.user.displayAvatarURL())
-                .setAuthor(message.author.username, message.author.displayAvatarURL());
+                .setAuthor('', client.user.displayAvatarURL());
+                //.setImage(client.user.displayAvatarURL())
+                //.setAuthor(message.author.username, message.author.displayAvatarURL());
             message.channel.send(embed);
         } else {
             message.channel.send(args.join(" "));
